@@ -1,0 +1,32 @@
+<!--
+  Generated template for the ManajemenPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+<ion-navbar no-border-bottom color="header">
+    <ion-title>Manajemen</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-card>
+  <ion-card-header>
+    Manajemen dibagi menjadi dua:
+  </ion-card-header>
+
+  <ion-list>
+    <button ion-item [navPush]="'KomisPage'">
+      <ion-icon name="cart" item-start></ion-icon>
+      Komisaris
+    </button>
+    <button ion-item [navPush]="'DirutPage'">
+      <ion-icon name="cart" item-start></ion-icon>
+      Direksi
+    </button>
+   </ion-list>
+</ion-card>
+</ion-content>

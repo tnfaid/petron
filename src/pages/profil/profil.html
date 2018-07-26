@@ -1,28 +1,28 @@
  <ion-header class="headerHome">
    <ion-navbar no-border-bottom color="header">
-		<button ion-button menuToggle>
-			<ion-icon name="menu"></ion-icon>
-		</button>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
         <ion-title>Profil</ion-title>
-	</ion-navbar>
+    </ion-navbar>
 </ion-header>
 
  <ion-content padding="true" class="has-header" offset-50>
         <div class="row item-text-wrap text-center" >
             <div class="item col col-4">
-                <a ui-sref="menu.maknaLogo()" id="profil-button25">
+                <a [navPush]="'MaknaLogoPage'">
                     <i class="icon"><img src="../assets/imgs/profil/makna.png" style="width: 50px;height: 50px;"></i>
                     <p>Makna Logo</p>
                 </a>
             </div>  
             <div class="item col col-4">
-                <a ui-sref="menu.sejarahPerusahaan()" id="profil-button26">
+                <a [navPush]="'SejPerusahaanPage'">
                     <i class="icon"><img src="../assets/imgs/profil/pabrik.png" style="width: 50px;height: 50px;"></i>
                     <p >Sejarah Perusahaan</p>
                 </a>
             </div>
             <div class="item col col-4">
-                <a id="profil-button143">
+                <a (click)='OpenUrl5();'>
                     <i class="icon"><img src="../assets/imgs/profil/profil.png" style="width: 50px;height: 50px;"></i>
                     <p>Profil Perusahaan PDF</p>
                 </a>
@@ -31,19 +31,19 @@
 
         <div class="row item-text-wrap text-center">
             <div class="item col col-4 ">
-                <a ui-sref="menu.visiMisiDanBudayaPerusahaan()" id="profil-button27">
+                <a [navPush]="'VisiMisiPage'">
                     <i class="icon"><img src="../assets/imgs/profil/visimisi.png" style="width: 50px;height: 50px;"></i>
                     <p>Visi Misi & Tata Nilai</p>
                 </a>
             </div>    
             <div class="item col col-4 ">
-                <a id="profil-button39">
+                <a (click)='KegInovasi();'>
                     <i class="icon"><img src="../assets/imgs/profil/inovasi.png" style="width: 50px;height: 50px;"></i>
                     <p>Inovasi</p>
                 </a>
             </div> 
             <div class="item col col-4">
-                <a ui-sref="menu.fasilitasInfrastruktur()" id="profil-button29">
+                <a [navPush]="'FasInfrasPage'">
                     <i class="icon"><img src="../assets/imgs/profil/infrastruktur.png" style="width: 50px;height: 50px;"></i>
                     <p>Fasilitas Infrastruktur</p>
                 </a>
@@ -52,19 +52,19 @@
 
         <div class="row item-text-wrap text-center">
             <div class="item col col-4 ">
-                <a ui-sref="menu.manajemen()" id="profil-button30">
+                <a [navPush]="'ManajemenPage'">
                     <i class="icon"><img src="../assets/imgs/profil/manajemen.png" style="width: 50px;height: 50px;"></i>
                     <p>Manajemen</p>
                 </a>
             </div>  
             <div class="item col col-4">
-                <a ui-sref="menu.lingkunganK3()" id="profil-button34">
+                <a [navPush]="'Lk3Page'">
                     <i class="icon"><img src="../assets/imgs/profil/lingkungan.png" style="width: 50px;height: 50px;"></i>
                     <p>Lingkungan & K3</p>
                 </a>
             </div>  
             <div class="item col col-4 ">
-                <a ui-sref="menu.komiteAudit()" id="profil-button36">
+                <a [navPush]="'KomitAuditPage'">
                     <i class="icon"><img src="../assets/imgs/profil/audit.png" style="width: 50px;height: 50px;"></i>
                     <p>Komite Audit</p>
                 </a>
@@ -73,19 +73,19 @@
 
         <div class="row item-text-wrap text-center">
             <div class="item col col-4">
-                <a id="profil-button31">
+                <a (click)='OpenUrl01();'>
                     <i class="icon"><img src="../assets/imgs/profil/struktur.png" style="width: 50px;height: 50px;"></i>
                     <p>Struktur Organisasi</p>
                 </a>
             </div>
             <div class="item col col-4">
-                <a ui-sref="menu.profesiPenunjang()" id="profil-button38">
+                <a [navPush]="'ProfPenunjangPage'">
                     <i class="icon"><img src="../assets/imgs/profil/penunjang.png" style="width: 50px;height: 50px;"></i>
                     <p>Profesi Penunjang</p>
                 </a>
             </div>
             <div class="item col col-4">
-                <a ui-sref="menu.kapasitasProduksi()" id="profil-button28">
+                <a [navPush]="'KapProdukPage'">
                     <i class="icon"><img src="../assets/imgs/profil/kapasitasProduksi.png" style="width: 50px;height: 50px;"></i>
                     <p>Kapasitas Produksi</p>
                 </a>
@@ -94,19 +94,19 @@
 
         <div class="row item-text-wrap text-center">
             <div class="item col col-4">
-                <a ui-sref="menu.sumberDayaManusia()" id="profil-button32">
+                <a [navPush]="'SdmPage'">
                     <i class="icon"><img src="../assets/imgs/profil/sdm.png" style="width: 50px;height: 50px;"></i>
                     <p>Sumber Daya Manusia</p>
                 </a>
             </div>
             <div class="item col col-4">
-                <a ui-sref="menu.komiteManajemenRisiko()" id="profil-button37">
+                <a [navPush]="'KomitManResikoPage'">
                     <i class="icon"><img src="../assets/imgs/profil/.png" style="width: 50px;height: 50px;"></i>
                     <p>Komite Manajemen Resiko</p>
                 </a>
             </div>   
             <div class="item col col-4 ">
-                <a id="profil-button142">
+                <a [navPush]="'AnPerusahaanPage'">
                     <i class="icon"><img src="../assets/imgs/profil/anakPerusahaan1.png" style="width: 50px;height: 50px;"></i>
                     <p>Anak Perusahaan & Usaha Patungan</p>
                 </a>
@@ -115,19 +115,19 @@
 
         <div class="row item-text-wrap text-center">
             <div class="item col col-4">
-                <a ui-sref="menu.penghargaanPrestasi()" id="profil-button35">
+                <a [navPush]="'PengPrestasiPage'">
                     <i class="icon"><img src="../assets/imgs/profil/penghargaan.png" style="width: 50px;height: 50px;"></i>
                     <p class="text-menuProfil">Penghargaan & Prestasi</p>
                 </a>
             </div>  
             <div class="item col col-4">
-                <a ui-sref="menu.marsPetrokimiaGresik()" id="profil-button41" [navPush]="'MarsPage'">
+                <a [navPush]="'MarsPetroPage'">
                     <i class="icon"><img src="../assets/imgs/profil/lirik.png" style="width: 50px;height: 50px;"></i>
                     <p>Mars Petrokimia Gresik</p>
                 </a>
             </div>  
             <div class="item col col-4 ">
-                <a ui-sref="menu.videoProfilPerusahaan()" id="profil-button42" [navPush]="'VideoProfilPage'">
+                <a [navPush]="'VideoProfilPage'">
                     <i class="icon"><img src="../assets/imgs/profil/video1.png" style="width: 50px;height: 50px;"></i>
                     <p>Video Profil Perusahaan</p>
                 </a>

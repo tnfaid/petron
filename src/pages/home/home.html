@@ -34,14 +34,19 @@
 
 
 <ion-content padding="true" class="has-header" >
-	<!-- ============================= IMAGES SLIDE ========================================================= -->
+	<!--============================= IMAGES SLIDE ========================================================= -->
     <ion-slides autoplay="5000" loop="true" speed="3000" style="width:100%;height:200px;" class="slideImage">
 	    <ion-slide *ngFor="let slide of slideData">
 	      <img src="{{slide.image}}" />
 	    </ion-slide>
 	</ion-slides>
-	<!-- ============================= LIST CARDS BERITA ========================================================= -->
-	<ion-card *ngFor="let card of cards1" class="cardHome">
+	<!--============================= LIST CARDS BERITA ========================================================= -->
+  <ion-list>
+    <button ion-item *ngFor="let berita of beritaku | async" (click)="openDetails(berita)">
+      {{berita.NewsTitle}}
+    </button>
+  </ion-list>
+	<!-- <ion-card *ngFor="let card of cards1" class="cardHome">
 
       <ion-item >
       	<ion-avatar item-left>
@@ -82,6 +87,16 @@
 
       </ion-item>
  
-    </ion-card>
+    </ion-card> -->
+    <!-- <ion-list>
+      <ion-item *ngFor="let n of news">
+        <ion-avatar item-left>
+          <img src="{{n.gambar}}">
+        </ion-avatar>
+        <h2>{{n.NewsTitle}}</h2>
+        <p>{{n.NewsHTML}}</p>
+        <ion-icon name="arrow-forward" item-right></ion-icon>
+      </ion-item>
+    </ion-list> -->
     
 </ion-content>

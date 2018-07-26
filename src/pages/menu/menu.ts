@@ -16,25 +16,22 @@ export interface PageInterface {
 })
 export class MenuPage {
   // Basic root for our content view
-  rootPage = 'TabsPage';
+  rootPage = 'HomePage';
  
   // Reference to the app's root nav
   @ViewChild(Nav) nav: Nav;
  
   pages: PageInterface[] = [
-    { title: 'Tab 1', pageName: 'TabsPage', tabComponent: 'Tab1Page', index: 0, icon: 'shuffle' },
-    { title: 'Tab 2', pageName: 'TabsPage', tabComponent: 'Tab2Page', index: 1, icon: 'shuffle' },
-    { title: 'Special', pageName: 'SpecialPage', icon: 'shuffle' },
     { title: 'Home', pageName: 'HomePage', icon: 'home' },
     { title: 'Pemasaran', pageName: 'PemasaranPage', icon: 'cart' },
     { title: 'Berita', pageName: 'BeritaPage', icon: 'list-box' },
     { title: 'Laporan', pageName: 'LaporanPage', icon: 'document' },
-    { title: 'TataKelola', pageName: 'TataKelolaPage', icon: 'shuffle' },
+    { title: 'TataKelola', pageName: 'TataKelolaPage', icon: 'md-analytics' },
     { title: 'Profil', pageName: 'ProfilPage', icon: 'person' },
     { title: 'InfoProduk', pageName: 'InfoProdukPage', icon: 'cube' },
-    { title: 'CSR', pageName: 'CorsoresPage', icon: 'shuffle' },
-    { title: 'Tautan', pageName: 'TautanPage', icon: 'shuffle' },
-    { title: 'Bantuan', pageName: 'BantuanPage', icon: 'shuffle' }
+    { title: 'CSR', pageName: 'CorsoresPage', icon: 'md-globe' },
+    { title: 'Tautan', pageName: 'TautanPage', icon: 'md-contacts' },
+    { title: 'Bantuan', pageName: 'BantuanPage', icon: 'md-help-circle' }
   ];
  
   constructor(public navCtrl: NavController) { }
