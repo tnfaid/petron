@@ -1,14 +1,14 @@
 webpackJsonp([2],{
 
-/***/ 272:
+/***/ 363:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Tab1PageModule", function() { return Tab1PageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Video2PageModule", function() { return Video2PageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(98);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tab1__ = __webpack_require__(280);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__video2__ = __webpack_require__(457);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,31 +18,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var Tab1PageModule = /** @class */ (function () {
-    function Tab1PageModule() {
+var Video2PageModule = /** @class */ (function () {
+    function Video2PageModule() {
     }
-    Tab1PageModule = __decorate([
+    Video2PageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__tab1__["a" /* Tab1Page */],
+                __WEBPACK_IMPORTED_MODULE_2__video2__["a" /* Video2Page */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__tab1__["a" /* Tab1Page */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__video2__["a" /* Video2Page */]),
             ],
         })
-    ], Tab1PageModule);
-    return Tab1PageModule;
+    ], Video2PageModule);
+    return Video2PageModule;
 }());
 
-//# sourceMappingURL=tab1.module.js.map
+//# sourceMappingURL=video2.module.js.map
 
 /***/ }),
 
-/***/ 280:
+/***/ 457:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Tab1Page; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Video2Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(98);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -57,29 +57,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the Tab1Page page.
+ * Generated class for the Video2Page page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var Tab1Page = /** @class */ (function () {
-    function Tab1Page(navCtrl, navParams) {
+var Video2Page = /** @class */ (function () {
+    function Video2Page(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
     }
-    Tab1Page.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad Tab1Page');
+    Video2Page.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad Video2Page');
     };
-    Tab1Page = __decorate([
+    Video2Page = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-tab1',template:/*ion-inline-start:"E:\Petro\plan Dev1\dev1_v3\src\pages\tab1\tab1.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n  	<ion-buttons menuToggle>\n\n		<button ion-button menyToggle>\n\n			<ion-icon name="menu"></ion-icon>\n\n		</button>\n\n	</ion-buttons>\n\n    <ion-title>Tab 1</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\nisi dari tab 1\n\n</ion-content>\n\n'/*ion-inline-end:"E:\Petro\plan Dev1\dev1_v3\src\pages\tab1\tab1.html"*/,
+            selector: 'page-video2',template:/*ion-inline-start:"E:\F\PORTAL\petron\src\pages\video2\video2.html"*/'<!--\n\n  Generated template for the Video1Page page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar no-border-bottom color="header">\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>NPK Kebomas</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n	<ion-list>\n\n        <div class="card">\n\n            <ion-item>\n\n                <div class="video-container">\n\n                   <iframe width="560" height="315" src="https://www.youtube.com/embed/BCnP7GXKrh8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>\n\n                </div>\n\n            </ion-item>\n\n        </div>\n\n    </ion-list>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"E:\F\PORTAL\petron\src\pages\video2\video2.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
-    ], Tab1Page);
-    return Tab1Page;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+    ], Video2Page);
+    return Video2Page;
 }());
 
-//# sourceMappingURL=tab1.js.map
+//# sourceMappingURL=video2.js.map
 
 /***/ })
 

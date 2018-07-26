@@ -1,0 +1,10 @@
+{
+  "com.moust.cordova.videoplayer": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-video-player"
+    },
+    "is_top_level": true,
+    "variables": {}
+  }
+}

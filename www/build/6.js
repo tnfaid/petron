@@ -1,14 +1,14 @@
 webpackJsonp([6],{
 
-/***/ 269:
+/***/ 367:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePageModule", function() { return HomePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TestimoniPageModule", function() { return TestimoniPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(98);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home__ = __webpack_require__(277);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__testimoni__ = __webpack_require__(461);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,31 +18,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var HomePageModule = /** @class */ (function () {
-    function HomePageModule() {
+var TestimoniPageModule = /** @class */ (function () {
+    function TestimoniPageModule() {
     }
-    HomePageModule = __decorate([
+    TestimoniPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_2__testimoni__["a" /* TestimoniPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__testimoni__["a" /* TestimoniPage */]),
             ],
         })
-    ], HomePageModule);
-    return HomePageModule;
+    ], TestimoniPageModule);
+    return TestimoniPageModule;
 }());
 
-//# sourceMappingURL=home.module.js.map
+//# sourceMappingURL=testimoni.module.js.map
 
 /***/ }),
 
-/***/ 277:
+/***/ 461:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TestimoniPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(98);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -57,33 +57,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the HomePage page.
+ * Generated class for the TestimoniPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var HomePage = /** @class */ (function () {
-    function HomePage(navCtrl) {
+var TestimoniPage = /** @class */ (function () {
+    function TestimoniPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
-        this.slideData = [{ image: "../assets/imgs/sni17_con.jpg" }, { image: "../assets/imgs/proper 17_con.jpg" }];
-        this.slideLength = false;
-        if (this.slideData.length > 0) {
-            this.slideLength = true;
-        }
-        //NEWS CARDS
-        this.cards1 = new Array(1); //untuk jumlah card yang akan ditampilkan
-        this.cards2 = new Array(1);
+        this.navParams = navParams;
     }
-    HomePage = __decorate([
+    TestimoniPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad TestimoniPage');
+    };
+    TestimoniPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"E:\Petro\plan Dev1\dev1_v3\src\pages\home\home.html"*/'<ion-header class="headerHome">\n\n  <ion-navbar no-border-bottom color="header">\n\n		<button ion-button menuToggle>\n\n			<ion-icon name="menu"></ion-icon>\n\n		</button>\n\n\n\n		<ion-segment [(ngModel)]="segment" (ionChange)="updateSchedule()"  color="textHeader" >\n\n	      <ion-segment-button value="semua">\n\n	        Semua\n\n	      </ion-segment-button>\n\n	      <ion-segment-button value="populer">\n\n	        Populer\n\n	      </ion-segment-button>\n\n	      <ion-segment-button value="terbaru">\n\n	        Terbaru\n\n	      </ion-segment-button>\n\n	    </ion-segment>\n\n\n\n	    <ion-buttons end>\n\n	      <button ion-button icon-only (click)="presentFilter()">\n\n	        <ion-icon ios="ios-more" md="md-more"></ion-icon>\n\n	      </button>\n\n	    </ion-buttons>\n\n  </ion-navbar>\n\n\n\n  <ion-toolbar no-border-top color="header">\n\n    <ion-searchbar color="primary"\n\n                   [(ngModel)]="queryText"\n\n                   (ionInput)="updateSchedule()"\n\n                   placeholder="Search">\n\n    </ion-searchbar>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding="true" class="has-header" >\n\n	<!-- ============================= IMAGES SLIDE ========================================================= -->\n\n    <ion-slides autoplay="5000" loop="true" speed="3000" style="width:100%;height:200px;" class="slideImage">\n\n	    <ion-slide *ngFor="let slide of slideData">\n\n	      <img src="{{slide.image}}" />\n\n	    </ion-slide>\n\n	</ion-slides>\n\n	<!-- ============================= LIST CARDS BERITA ========================================================= -->\n\n	<ion-card *ngFor="let card of cards1" class="cardHome">\n\n\n\n      <ion-item >\n\n      	<ion-avatar item-left>\n\n          <img class="avatarCard" src="../assets/imgs/proper 17_con.jpg" />\n\n        </ion-avatar>\n\n\n\n        <p class="textDesc text-wrap">PG Kucurkan Bantuan Untuk Korban Banjir Di Lamongan</p>\n\n\n\n         <ion-row>\n\n        <ion-col right text-right>\n\n          <ion-note class="cardLink">\n\n            Selengkapnya ...\n\n          </ion-note>\n\n        </ion-col>\n\n      </ion-row>\n\n\n\n      </ion-item>\n\n \n\n     \n\n \n\n    </ion-card>\n\n    <ion-card *ngFor="let card of cards2"  class="cardHome">\n\n\n\n      <ion-item >\n\n      	<ion-avatar item-left>\n\n          <img class="avatarCard" src="../assets/imgs/sni17_con.jpg" />\n\n        </ion-avatar>\n\n\n\n        <p class="textDesc text-wrap">PG Kucurkan Bantuan Untuk Korban Banjir Di Lamongan</p>\n\n\n\n        <ion-row>\n\n        <ion-col right text-right>\n\n          <ion-note class="cardLink">\n\n            Selengkapnya ...\n\n          </ion-note>\n\n        </ion-col>\n\n      </ion-row>\n\n\n\n      </ion-item>\n\n \n\n    </ion-card>\n\n    \n\n</ion-content>\n\n'/*ion-inline-end:"E:\Petro\plan Dev1\dev1_v3\src\pages\home\home.html"*/,
+            selector: 'page-testimoni',template:/*ion-inline-start:"E:\F\PORTAL\petron\src\pages\testimoni\testimoni.html"*/'<!--\n\n  Generated template for the TestimoniProdukPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar no-border-bottom color="header">\n\n		<button ion-button menuToggle>\n\n			<ion-icon name="menu"></ion-icon>\n\n		</button>\n\n    <ion-title>Testimoni Produk</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n	<div class="row item-text-wrap text-center">\n\n		<ion-card>\n\n  <img src="../assets/imgs/Pupuk/kebomas.png"style="width: 150px;height: 150px;">\n\n  <ion-card-content>\n\n    <a [navPush]="\'Video1Page\'">\n\n         <ion-card-title> \n\n          NPK Kebomas Horti \n\n         </ion-card-title> \n\n    </a>	\n\n  </ion-card-content>\n\n</ion-card>		\n\n	</div>\n\n\n\n	<div class="row item-text-wrap text-center">\n\n		<ion-card>\n\n  <img src="../assets/imgs/Pupuk/npk.png"style="width: 150px;height: 150px;">\n\n  <ion-card-content>\n\n     <a [navPush]="\'Video2Page\'">\n\n         <ion-card-title> \n\n          NPK Kebomas \n\n         </ion-card-title> \n\n    </a>\n\n\n\n  </ion-card-content>\n\n</ion-card>		\n\n	</div>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"E:\F\PORTAL\petron\src\pages\testimoni\testimoni.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
-    ], HomePage);
-    return HomePage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+    ], TestimoniPage);
+    return TestimoniPage;
 }());
 
-//# sourceMappingURL=home.js.map
+//# sourceMappingURL=testimoni.js.map
 
 /***/ })
 

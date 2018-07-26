@@ -1,14 +1,14 @@
 webpackJsonp([3],{
 
-/***/ 271:
+/***/ 362:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SpecialPageModule", function() { return SpecialPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Video1PageModule", function() { return Video1PageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(98);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__special__ = __webpack_require__(279);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__video1__ = __webpack_require__(456);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,31 +18,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var SpecialPageModule = /** @class */ (function () {
-    function SpecialPageModule() {
+var Video1PageModule = /** @class */ (function () {
+    function Video1PageModule() {
     }
-    SpecialPageModule = __decorate([
+    Video1PageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__special__["a" /* SpecialPage */],
+                __WEBPACK_IMPORTED_MODULE_2__video1__["a" /* Video1Page */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__special__["a" /* SpecialPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__video1__["a" /* Video1Page */]),
             ],
         })
-    ], SpecialPageModule);
-    return SpecialPageModule;
+    ], Video1PageModule);
+    return Video1PageModule;
 }());
 
-//# sourceMappingURL=special.module.js.map
+//# sourceMappingURL=video1.module.js.map
 
 /***/ }),
 
-/***/ 279:
+/***/ 456:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SpecialPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Video1Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(98);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -57,29 +57,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the SpecialPage page.
+ * Generated class for the Video1Page page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var SpecialPage = /** @class */ (function () {
-    function SpecialPage(navCtrl, navParams) {
+var Video1Page = /** @class */ (function () {
+    function Video1Page(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
     }
-    SpecialPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad SpecialPage');
+    Video1Page.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad Video1Page');
     };
-    SpecialPage = __decorate([
+    Video1Page = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-special',template:/*ion-inline-start:"E:\Petro\plan Dev1\dev1_v3\src\pages\special\special.html"*/'<ion-header>\n\n  <ion-navbar>\n\n	<ion-buttons menuToggle>\n\n		<button ion-button menyToggle>\n\n			<ion-icon name="menu"></ion-icon>\n\n		</button>\n\n	</ion-buttons>\n\n    <ion-title>Special</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\nisi dari special page\n\n</ion-content>\n\n'/*ion-inline-end:"E:\Petro\plan Dev1\dev1_v3\src\pages\special\special.html"*/,
+            selector: 'page-video1',template:/*ion-inline-start:"E:\F\PORTAL\petron\src\pages\video1\video1.html"*/'<!--\n\n  Generated template for the Video1Page page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar no-border-bottom color="header">\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>NPK Kebomas Horti</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n	<ion-list>\n\n        <div class="card">\n\n            <ion-item>\n\n                <div class="video-container">\n\n                    <iframe width="560" height="315" src="https://www.youtube.com/embed/vsgcdOerMwY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>\n\n                </div>\n\n            </ion-item>\n\n        </div>\n\n    </ion-list>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"E:\F\PORTAL\petron\src\pages\video1\video1.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
-    ], SpecialPage);
-    return SpecialPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+    ], Video1Page);
+    return Video1Page;
 }());
 
-//# sourceMappingURL=special.js.map
+//# sourceMappingURL=video1.js.map
 
 /***/ })
 
