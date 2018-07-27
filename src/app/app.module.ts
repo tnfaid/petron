@@ -7,7 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HttpClientModule } from '@angular/common/http'; //import untuk bisa panggil api
-
+import {ApiProvider } from '../providers/api/api';
 @NgModule({
   declarations: [
     MyApp
@@ -24,7 +24,9 @@ import { HttpClientModule } from '@angular/common/http'; //import untuk bisa pan
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ApiProvider,
+    ApiProvider
   ]
 })
 export class AppModule {}

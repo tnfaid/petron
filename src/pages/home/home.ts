@@ -1,7 +1,8 @@
+import { ApiProvider } from '../../providers/api/api';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';//api
-import { HttpClient } from '@angular/common/http';//api
+import { DetailBeritaPage } from '../detail-berita/detail-berita';
 
 /**
  * Generated class for the HomePage page.
@@ -22,18 +23,18 @@ export class HomePage {
   slideData = [{ image: "../assets/imgs/sni17_con.jpg" },{ image: "../assets/imgs/proper 17_con.jpg"}]
   slideLength: boolean = false;
 
-  beritaku : Observable<any>;
+  beritaku : any[] = [];
   data :any;
-  constructor(public navCtrl: NavController, public httpClient : HttpClient) {
-    this.beritaku = this.httpClient.get('http://127.0.0.1/rest-ci-old/index.php/News');   
+  constructor(public navCtrl: NavController, public apiProvider: ApiProvider) {
+    this.beritaku = this.apiProvider.getBerita();   
     this.beritaku
     .subscribe(data => {
       console.log('my data: ', data);
     })
   }
 
-  openDetails(berita) {
-    this.navCtrl.push('BeritaDetailPage', { berita: this.beritaku});
+  openDetails(beritaku: any) {
+    this.navCtrl.push('DetailBeritaPage', { berita: beritaku.NewsID});
   }
  //  constructor(public navCtrl: NavController) {
  //  	if(this.slideData.length>0) {
