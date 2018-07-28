@@ -1,8 +1,7 @@
-import { ApiProvider } from '../../providers/api/api';
+import { ApiProvider } from './../../providers/api/api';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';//api
-import { DetailBeritaPage } from '../detail-berita/detail-berita';
 
 /**
  * Generated class for the HomePage page.
@@ -17,33 +16,24 @@ import { DetailBeritaPage } from '../detail-berita/detail-berita';
   templateUrl: 'home.html',
 })
 export class HomePage {
-
+  //------------------------- TAMPILAN GAMBAR HOME --------------------------------------//
   cards1: any;
   cards2: any;
-  slideData = [{ image: "../assets/imgs/sni17_con.jpg" },{ image: "../assets/imgs/proper 17_con.jpg"}]
+  slideData = [{ image: "../assets/imgs/sni17_con.jpg" }, { image: "../assets/imgs/proper 17_con.jpg" }]
   slideLength: boolean = false;
 
-  beritaku : any[] = [];
-  data :any;
+  //------------------------- TAMPILAN BERITA HOME --------------------------------------//
+  beritaku: Observable<any>;
   constructor(public navCtrl: NavController, public apiProvider: ApiProvider) {
-    this.beritaku = this.apiProvider.getBerita();   
+    this.beritaku = this.apiProvider.getBerita();
+
     this.beritaku
-    .subscribe(data => {
-      console.log('my data: ', data);
-    })
+      .subscribe(data => {
+        console.log('dataku: ', data);
+      })
   }
 
-  openDetails(beritaku: any) {
-    this.navCtrl.push('DetailBeritaPage', { berita: beritaku.NewsID});
+  openDetails(berita) {
+    this.navCtrl.push('BeritaDetailPage', { berita: berita });
   }
- //  constructor(public navCtrl: NavController) {
- //  	if(this.slideData.length>0) {
- //      this.slideLength = true;
-	// }
-	//NEWS CARDS
-	// this.cards1 = new Array(1);//untuk jumlah card yang akan ditampilkan
-	// this.cards2 = new Array(1);
- //  }
-
-
 }
