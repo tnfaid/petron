@@ -1,10 +1,8 @@
 <ion-header class="headerHome">
   <ion-navbar no-border-bottom color="header">
-		<button ion-button menuToggle>
-			<ion-icon name="menu"></ion-icon>
-		</button>
+		
 
-		<ion-segment [(ngModel)]="segment" (ionChange)="updateSchedule()"  color="textHeader" >
+		<!-- <ion-segment [(ngModel)]="segment" (ionChange)="updateSchedule()"  color="textHeader" >
 	      <ion-segment-button value="semua">
 	        Semua
 	      </ion-segment-button>
@@ -14,8 +12,11 @@
 	      <ion-segment-button value="terbaru">
 	        Terbaru
 	      </ion-segment-button>
-	    </ion-segment>
-
+	    </ion-segment> -->
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>PetroNews</ion-title>
 	    <ion-buttons end>
 	      <button ion-button icon-only (click)="presentFilter()">
 	        <ion-icon ios="ios-more" md="md-more"></ion-icon>
@@ -41,33 +42,21 @@
 	    </ion-slide>
 	</ion-slides>
 	<!--============================= LIST CARDS BERITA ========================================================= -->
-  <ion-list>
-    <button ion-item *ngFor="let berita of beritaku | async" (click)="openDetails(berita)">
-      {{berita.NewsTitle}}
-    </button>
-  </ion-list>
-	<!-- <ion-card *ngFor="let card of cards1" class="cardHome">
+
+    <ion-card *ngFor="let berita of beritaku | async" (click)="openDetails(berita)"class="cardHome">
 
       <ion-item >
-      	<ion-avatar item-left>
+        <ion-avatar item-left>
           <img class="avatarCard" src="../assets/imgs/proper 17_con.jpg" />
         </ion-avatar>
 
-        <p class="textDesc text-wrap">PG Kucurkan Bantuan Untuk Korban Banjir Di Lamongan</p>
-
-         <ion-row>
-        <ion-col right text-right>
-          <ion-note class="cardLink">
-            Selengkapnya ...
-          </ion-note>
-        </ion-col>
-      </ion-row>
-
+        <p class="textDesc text-wrap">{{berita.NewsTitle}}</p>
       </ion-item>
  
      
  
     </ion-card>
+	<!-- 
     <ion-card *ngFor="let card of cards2"  class="cardHome">
 
       <ion-item >

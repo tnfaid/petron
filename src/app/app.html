@@ -1,1 +1,17 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu persistent="true" [content]="content" (ionClose)="collapseMenuOptions()">
+	<ion-header>
+		<ion-toolbar color="header">
+			<ion-title>{{ (sideMenuSettings.accordionMode ? 'Menu' : 'Default')}}</ion-title>
+		</ion-toolbar>
+	</ion-header>
+
+	<ion-content>
+
+		<!-- side menu content -->
+		<side-menu-content [settings]="sideMenuSettings" [options]="options" (change)="onOptionSelected($event)"></side-menu-content>
+
+	</ion-content>
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="true"></ion-nav>

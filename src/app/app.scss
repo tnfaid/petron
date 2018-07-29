@@ -1,16 +1,57 @@
-// http://ionicframework.com/docs/theming/
 
+.ios, .md {
+ 
+    AppModule {
+        .headerHome {
+         border-top-color: #00b052
+        }
+        .slideImage{
+          padding-bottom: 20px;
+          margin-bottom: -20px;
+        }
+        ion-header {
+          background-color: red;
+        }
+        .textButtonHeader{
+          color: #fff;
+          font-weight: bold;
+        }
+        ion-navbar {
+        }
 
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
+        ion-avatar{
+          border-radius: 0px;
+        }
+
+        .avatarCard{
+          height: 80px;
+          width: 80px;
+          border-radius: 0px;
+        }
+
+        .cardHome{
+          border-top-color: #00b052;
+          border-top-style: outset;
+          border-width: 1px;
+          border-color: #00b052;
+          box-shadow: 0 3px 3px rgb(9, 95, 25);
+        }
+
+        .avatarCard{
+          height: 80px;
+          width: 80px;
+          border-radius: 0px;
+        }
+
+        .cardLink{
+          color: blue;
+        }
+
+        p.textDesc{
+          color: #000;
+          white-space: normal;
+        }
+ 
+    }
+ 
+}
