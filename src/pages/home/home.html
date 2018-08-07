@@ -1,4 +1,4 @@
-<ion-header class="headerHome">
+<ion-header class="headerHome {{global.state['theme']}}">
   <ion-navbar no-border-bottom color="header">
 		
 
@@ -27,23 +27,30 @@
   <ion-toolbar no-border-top color="header">
     <ion-searchbar color="primary"
                    [(ngModel)]="queryText"
-                   (ionInput)="updateSchedule()"
+                   (ionInput)="updateBerita()"
                    placeholder="Search">
     </ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 
-<ion-content padding="true" class="has-header" >
+<ion-content padding="true" class="has-header {{global.state['theme']}}" >
+ <h3>Setting theme</h3>
+  <button class="pop-in" ion-button (click)="changeTheme('')">Default</button>
+  <button class="pop-in" ion-button color="dark" (click)="changeTheme('theme-dark')">Dark</button>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
 	<!--============================= IMAGES SLIDE ========================================================= -->
-    <ion-slides autoplay="5000" loop="true" speed="3000" style="width:100%;height:200px;" class="slideImage">
+   <!--  <ion-slides autoplay="5000" loop="true" speed="3000" style="width:100%;height:200px;" class="slideImage">
 	    <ion-slide *ngFor="let slide of slideData">
 	      <img src="{{slide.image}}" />
 	    </ion-slide>
-	</ion-slides>
+	</ion-slides> -->
 	<!--============================= LIST CARDS BERITA ========================================================= -->
 
-    <ion-card *ngFor="let berita of beritaku | async" (click)="openDetails(berita)"class="cardHome">
+    <!-- <ion-card *ngFor="let berita of beritaku | async" (click)="openDetails(berita)"class="cardHome" style="width:100%;height:100px;">
 
       <ion-item >
         <ion-avatar item-left>
@@ -55,7 +62,7 @@
  
      
  
-    </ion-card>
+    </ion-card> -->
 	<!-- 
     <ion-card *ngFor="let card of cards2"  class="cardHome">
 
@@ -87,5 +94,40 @@
         <ion-icon name="arrow-forward" item-right></ion-icon>
       </ion-item>
     </ion-list> -->
+
+    <div class="popup-menu">
+    <div class="popup-menu-overlay" [ngClass]="{'in': openMenu}" (click)="togglePopupMenu()"></div>
+    <div class="popup-menu-toggle" (click)="togglePopupMenu()" [ngClass]="{'out': openMenu}"></div>
+    <div class="popup-menu-panel" [ngClass]="{'in': openMenu}">
+      <div class="popup-menu-item" (click)="goToPengumuman()">
+        <ion-icon name="paper"></ion-icon>
+        <ion-badge>25</ion-badge>
+        <span>PENGUMUMAN</span>
+      </div>
+      <div class="popup-menu-item" (click)="goToSiaran()">
+        <ion-icon name="trophy"></ion-icon>
+        <span>SIARAN PERS</span>
+      </div>
+      <div class="popup-menu-item" (click)="goToArtikel()">
+        <ion-icon name="podium"></ion-icon>
+        <ion-badge>10</ion-badge>
+        <span>ARTIKEL</span>
+      </div>
+      <div class="popup-menu-item" (click)="goToHelp()">
+        <ion-icon name="bookmarks"></ion-icon>
+        <span>TERSIMPAN</span>
+      </div>
+      <div class="popup-menu-item" (click)="goToReportase()">
+        <ion-icon name="paper-plane"></ion-icon>
+        <!-- <ion-badge>5</ion-badge> -->
+        <span>REPORTASE</span>
+      </div>
+      <div class="popup-menu-item" (click)="goToLaporan()">
+        <ion-icon name="document"></ion-icon>
+        <!-- <ion-badge>25</ion-badge> -->
+        <span>LAPORAN</span>
+      </div>
+    </div>
+  </div>
     
 </ion-content>
