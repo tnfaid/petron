@@ -1,4 +1,4 @@
-<ion-menu persistent="true" [content]="content" (ionClose)="collapseMenuOptions()">
+<ion-menu persistent="true" [content]="content" (ionClose)="collapseMenuOptions()" class="{{global.state['theme']}}">
 	<ion-header>
 		<ion-toolbar color="header">
 			<ion-title>{{ (sideMenuSettings.accordionMode ? 'Menu' : 'Default')}}</ion-title>

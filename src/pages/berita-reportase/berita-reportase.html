@@ -1,51 +1,62 @@
-<!--
-  Generated template for the BeritaReportasePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar no-border-bottom color="header">
-		<button ion-button menuToggle>
-			<ion-icon name="menu"></ion-icon>
-		</button>
-    <ion-title>Berita Reportase</ion-title>
+<ion-header >
+  <ion-navbar no-border-bottom color="header" >
+    <ion-title>Reportase</ion-title>
+    <ion-buttons end>
+    </ion-buttons>
   </ion-navbar>
-
 </ion-header>
 
+<ion-content class="{{global.state['theme']}}">
+  <div class="popup-menu">
+    <div class="popup-menu-overlay" [ngClass]="{'in': openMenu}" (click)="togglePopupMenu()"></div>
+    <div class="popup-menu-toggle" (click)="togglePopupMenu()" [ngClass]="{'out': openMenu}"></div>
+    <div class="popup-menu-panel" [ngClass]="{'in': openMenu}">
+      <div class="popup-menu-item" (click)="goToHome()">
+        <ion-icon name="globe"></ion-icon>
+        <span>HOME</span>
+      </div>
+      <div class="popup-menu-item" (click)="goToArtikel()">
+        <ion-icon name="globe"></ion-icon>
+        <span> Artikel</span>
+      </div>
+      <div class="popup-menu-item" (click)="goToPengumuman()">
+        <ion-icon name="globe"></ion-icon>
+        <span>Pengumuman</span>
+      </div>
+      <div class="popup-menu-item" (click)="goToSiaranPers()">
+        <ion-icon name="globe"></ion-icon>
+        <span>Siaran Pers</span>
+      </div>
+      <div class="popup-menu-item" (click)="goToTahunan()">
+        <ion-icon name="globe"></ion-icon>
+        <span>Kegiatan Tahun</span>
+      </div>
+      <div class="popup-menu-item" (click)="goToPengaturan()">
+        <ion-icon name="settings"></ion-icon>
+        <span>Pengaturan</span>
+      </div>
+    </div>
+  </div>
 
-<ion-content>
-	<div class="rowBeritaReportase">
-	  <span>
-	    <input class="basic-slide" id="date" type="date" placeholder="Select Date" />
-	    <label for="name">Date</label>
-	  </span>
-	</div>
+  <div class="rowBeritaReportase">
+    <span>
+      <input class="basic-slide" id="date" type="date" placeholder="Select Date" />
+      <label for="name">Date</label>
+    </span>
+  </div>
 
-<ion-card *ngFor="let card of cards1" class="cardHome">
-
-      <ion-item >
-      	<ion-avatar item-left>
-          <img class="avatarCard" src="../assets/imgs/proper 17_con.jpg" />
+  <!--============================= LIST CARDS BERITA =================================================== -->
+    <ion-card *ngFor="let berita of beritaku | async" (click)="openDetails(berita)"class="cardHome">
+      <ion-item text-wrap>
+        <ion-avatar item-left clas="avatarBerita">
+          <img class="avatarCard" src="{{berita.ImageName}}" />
         </ion-avatar>
 
-        <p class="textDesc text-wrap">PG Kucurkan Bantuan Untuk Korban Banjir Di Lamongan</p>
-
-         <ion-row>
-        <ion-col right text-right>
-          <ion-note class="cardLink">
-            Selengkapnya ...
-          </ion-note>
-        </ion-col>
-      </ion-row>
-
-      </ion-item>
- 
-     
- 
+        <p class="textDesc text-wrap">{{berita.NewsTitle}}</p>
+      </ion-item> 
+      <ion-label class="itemSelengkapnya">Selengkapnya...</ion-label>
     </ion-card>
+  <!--=================================================================================================== -->
     
  
 </ion-content>

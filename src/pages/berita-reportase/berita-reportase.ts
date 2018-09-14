@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController} from 'ionic-angular';
+import { ApiProvider } from './../../providers/api/api';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, Refresher, List, ItemSliding, ToastController } from 'ionic-angular';
+import { Observable } from 'rxjs/Observable';//api
+import { AppState } from '../../app/app.global';
 
 /**
  * Generated class for the BeritaReportasePage page.
@@ -14,11 +17,77 @@ import { IonicPage, NavController} from 'ionic-angular';
   templateUrl: 'berita-reportase.html',
 })
 export class BeritaReportasePage {
-	cards1: any;
+  openMenu = false;
+  @ViewChild('beritaList', { read: List }) beritaList: List;
 
-  constructor(public navCtrl: NavController) {
-	//NEWS CARDS
-	this.cards1 = new Array(5);//untuk jumlah card yang akan ditampilkan
-	}
+   beritaku: Observable<any>;
+  constructor(public navCtrl: NavController, public apiProvider: ApiProvider,
+   public toastCtrl : ToastController, public global: AppState) {
+    this.beritaku = this.apiProvider.getBerita();
+
+    this.beritaku
+      .subscribe(data => {
+        console.log('dataku: ', data);
+      })
+  }
+
+  IonViewDidLoad(){
+     this.updateBerita();
+  }
+
+  updateBerita(){
+    // Close any open sliding items when the berita updates
+    this.beritaList && this.beritaList.closeSlidingItems();
+
+    this.apiProvider.getBerita();
+  }
+
+  openDetails(berita) {
+    this.navCtrl.push('BeritaDetailPage', { berita: berita });
+  }
+
+  doRefresh(refresher: Refresher) {
+    this.beritaku = this.apiProvider.getBerita();
+
+      // simulate a network request that would take longer
+      // than just pulling from out local json file
+      setTimeout(() => {
+        refresher.complete();
+
+        const toast = this.toastCtrl.create({
+          message: 'Sessions have been updated.',
+          duration: 3000
+        });
+        toast.present();
+      }, 1000);
+   };
+
+  togglePopupMenu() {
+    return this.openMenu = !this.openMenu;
+  }
+
+  goToArtikel() {
+    this.navCtrl.push('ArtikelPage');
+  }
+
+  goToHome() {
+    this.navCtrl.push('HomePage');
+  }
+
+  goToTahunan() {
+    this.navCtrl.push('KegiatanTahunanPage');
+  }
+
+  goToPengumuman() {
+    this.navCtrl.push('PengumumanPage');
+  }
+
+  goToSiaranPers() {
+    this.navCtrl.push('SiaranPersPage');
+  }
+
+  goToPengaturan() {
+    this.navCtrl.push('');
+  }
 
 }

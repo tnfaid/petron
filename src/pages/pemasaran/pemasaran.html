@@ -1,4 +1,4 @@
-<ion-header class="headerHome">
+<ion-header class="headerHome {{global.state['theme']}}">
   <ion-navbar no-border-bottom color="header">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
@@ -7,13 +7,13 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="{{global.state['theme']}}">
 
-	<button class="accordion">Sistem Distribusi</button>
+	<button class="accordion" >Sistem Distribusi</button>
 <div class="panel">
 
   <button class="accordion">Tanpa Gudang Penyangga</button>
-  <div class="panel">
+  <div class="panel" class="{{global.state['theme']}}">
   <p>Lorem ipsum...</p>
   </div>
 

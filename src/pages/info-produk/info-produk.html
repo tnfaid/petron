@@ -9,18 +9,58 @@
 
 
 <ion-content padding="true" class="has-header">
-  <ion-slides autoplay="5000" loop="true" speed="3000" style="width:100%;height:200px;" class="slideImage">
+
+  <div class="home-hello">
+  <ion-slides autoplay="5000" loop="true" speed="3000" class="slideImage">
       <ion-slide *ngFor="let slide of slideData">
         <img src="{{slide.image}}" />
       </ion-slide>
   </ion-slides>
 
-  <ul>
+
+  <!-- <ul>
     <li><a ui-sref="menu.pupuk()" id="infoProduk-button52" class="btn paper paper-raise-flatten" [navPush]="'PupukPage'">Pupuk</a></li>
     <li><a ui-sref="menu.nonPupuk()" id="infoProduk-button53" class="btn paper paper-raise-flatten" [navPush]="'NonPage'">Non Pupuk</a></li>
     <li><a ui-sref="menu.brosur()" id="infoProduk-button54" class="btn paper paper-raise-flatten" [navPush]="'BrosurPage'">Brosur</a></li>
     <li><a ui-sref="menu.dosisPemupukan()" id="infoProduk-button55" class="btn paper paper-raise-flatten" [navPush]="'DosisPage'">Dosis Pemupukan</a></li>
     <li><a ui-sref="menu.testimoniProduk()" id="infoProduk-button56" class="btn paper paper-raise-flatten" [navPush]="'TestimoniPage'">Testimoni Produk</a></li>
-  </ul>
+  </ul> -->
 
-</ion-content>
+
+
+  <ion-card>
+  <ion-card-header>
+    Katalog
+  </ion-card-header>
+
+  <ion-list>
+    <button ion-item ui-sref="menu.pupuk()" [navPush]="'PupukPage'">
+      <ion-icon name="cube" item-start><!-- <img class="displayed" height="50px" width="50px" src="../assets/imgs/fertilizer.png"> --></ion-icon>
+      Pupuk
+    </button>
+
+    <button ion-item ui-sref="menu.nonPupuk()" [navPush]="'NonPage'">
+      <ion-icon name="cube" item-start></ion-icon>
+      Non Pupuk
+    </button>
+
+    <button ion-item ui-sref="menu.brosur()" [navPush]="'BrosurPage'">
+      <ion-icon name="albums" item-start></ion-icon>
+      Brosur
+    </button>
+
+    <button ion-item ui-sref="menu.dosisPemupukan()" [navPush]="'DosisPage'">
+      <ion-icon name="paper" item-start></ion-icon>
+      Dosis Pemupukan
+    </button>
+
+    <button ion-item ui-sref="menu.testimoniProduk()" [navPush]="'TestimoniPage'">
+      <ion-icon name="camera" item-start></ion-icon>
+      Testimoni Produk
+    </button>
+
+  </ion-list>
+</ion-card>
+
+
+

@@ -1,136 +1,92 @@
- <ion-header class="headerHome">
+ <ion-header class="headerHome {{global.state['theme']}}">
    <ion-navbar no-border-bottom color="header">
         <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
         <ion-title>Profil</ion-title>
     </ion-navbar>
+    <ion-toolbar no-border-top color="header">
+    <ion-searchbar [(ngModel)]="terms"></ion-searchbar>
+<!-- <button ion-button type="button" (click)="sort()">Sort</button> -->
+    </ion-toolbar>
 </ion-header>
 
- <ion-content padding="true" class="has-header" offset-50>
-        <div class="row item-text-wrap text-center" >
-            <div class="item col col-4">
-                <a [navPush]="'MaknaLogoPage'">
-                    <i class="icon"><img src="../assets/imgs/profil/makna.png" style="width: 50px;height: 50px;"></i>
-                    <p>Makna Logo</p>
-                </a>
-            </div>  
-            <div class="item col col-4">
-                <a [navPush]="'SejPerusahaanPage'">
-                    <i class="icon"><img src="../assets/imgs/profil/pabrik.png" style="width: 50px;height: 50px;"></i>
-                    <p >Sejarah Perusahaan</p>
-                </a>
-            </div>
-            <div class="item col col-4">
-                <a (click)='OpenUrl5();'>
-                    <i class="icon"><img src="../assets/imgs/profil/profil.png" style="width: 50px;height: 50px;"></i>
-                    <p>Profil Perusahaan PDF</p>
-                </a>
-            </div>    
-        </div>
+<ion-content padding="true" class="{{global.state['theme']}" offset-50>
+    <ion-slides autoplay="5000" loop="true" speed="3000" style="width:100%;height:200px;" class="slideImage">
+        <ion-slide *ngFor="let slide of slideData">
+          <img src="{{slide.image}}" />
+        </ion-slide>
+    </ion-slides>
 
-        <div class="row item-text-wrap text-center">
-            <div class="item col col-4 ">
-                <a [navPush]="'VisiMisiPage'">
-                    <i class="icon"><img src="../assets/imgs/profil/visimisi.png" style="width: 50px;height: 50px;"></i>
-                    <p>Visi Misi & Tata Nilai</p>
-                </a>
-            </div>    
-            <div class="item col col-4 ">
-                <a (click)='KegInovasi();'>
-                    <i class="icon"><img src="../assets/imgs/profil/inovasi.png" style="width: 50px;height: 50px;"></i>
-                    <p>Inovasi</p>
-                </a>
-            </div> 
-            <div class="item col col-4">
-                <a [navPush]="'FasInfrasPage'">
-                    <i class="icon"><img src="../assets/imgs/profil/infrastruktur.png" style="width: 50px;height: 50px;"></i>
-                    <p>Fasilitas Infrastruktur</p>
-                </a>
-            </div>  
-        </div>
+    <ion-card class="category-concept-card card" no-lines no-padding>
+    <ion-card-header>
+      <h2 class="category-title" class="textDesc text-wrap">Profil Perusahaan</h2>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-col no-padding>
+            <button ion-button color="secondary" round outline item-end icon-left (click)='OpenUrl5();'>
+                <ion-icon name="ios-browsers"></ion-icon>
+                Open Page
+            </button>
+        </ion-col>
+    </ion-card-content>
+    </ion-card>
 
-        <div class="row item-text-wrap text-center">
-            <div class="item col col-4 ">
-                <a [navPush]="'ManajemenPage'">
-                    <i class="icon"><img src="../assets/imgs/profil/manajemen.png" style="width: 50px;height: 50px;"></i>
-                    <p>Manajemen</p>
-                </a>
-            </div>  
-            <div class="item col col-4">
-                <a [navPush]="'Lk3Page'">
-                    <i class="icon"><img src="../assets/imgs/profil/lingkungan.png" style="width: 50px;height: 50px;"></i>
-                    <p>Lingkungan & K3</p>
-                </a>
-            </div>  
-            <div class="item col col-4 ">
-                <a [navPush]="'KomitAuditPage'">
-                    <i class="icon"><img src="../assets/imgs/profil/audit.png" style="width: 50px;height: 50px;"></i>
-                    <p>Komite Audit</p>
-                </a>
-            </div>  
-        </div>
+    <ion-card style="width: 100%; height: 100px;overflow : hidden !important;" class="category-concept-card cardHome" no-lines no-padding>
+    <ion-card-header>
+      <h2 class="category-title" class="textDesc text-wrap">Kegiatan Inovasi</h2>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-col no-padding>
+            <button ion-button color="secondary" round outline item-end icon-left (click)='KegInovasi();'>
+                <ion-icon name="ios-browsers"></ion-icon>
+                Open Page
+            </button>
+        </ion-col>
+    </ion-card-content>
+    </ion-card>
 
-        <div class="row item-text-wrap text-center">
-            <div class="item col col-4">
-                <a (click)='OpenUrl01();'>
-                    <i class="icon"><img src="../assets/imgs/profil/struktur.png" style="width: 50px;height: 50px;"></i>
-                    <p>Struktur Organisasi</p>
-                </a>
-            </div>
-            <div class="item col col-4">
-                <a [navPush]="'ProfPenunjangPage'">
-                    <i class="icon"><img src="../assets/imgs/profil/penunjang.png" style="width: 50px;height: 50px;"></i>
-                    <p>Profesi Penunjang</p>
-                </a>
-            </div>
-            <div class="item col col-4">
-                <a [navPush]="'KapProdukPage'">
-                    <i class="icon"><img src="../assets/imgs/profil/kapasitasProduksi.png" style="width: 50px;height: 50px;"></i>
-                    <p>Kapasitas Produksi</p>
-                </a>
-            </div>  
-        </div>
+    <ion-card style="width: 100%; height: 100px;overflow : hidden !important;" class="category-concept-card cardHome" no-lines no-padding>
+    <ion-card-header>
+      <h2 class="category-title" class="textDesc text-wrap">Struktur Organisasi</h2>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-col no-padding>
+            <button ion-button color="secondary" round outline item-end icon-left (click)='OpenUrl01();'>
+                <ion-icon name="ios-browsers"></ion-icon>
+                Open Page
+            </button>
+        </ion-col>
+    </ion-card-content>
+    </ion-card>
 
-        <div class="row item-text-wrap text-center">
-            <div class="item col col-4">
-                <a [navPush]="'SdmPage'">
-                    <i class="icon"><img src="../assets/imgs/profil/sdm.png" style="width: 50px;height: 50px;"></i>
-                    <p>Sumber Daya Manusia</p>
-                </a>
-            </div>
-            <div class="item col col-4">
-                <a [navPush]="'KomitManResikoPage'">
-                    <i class="icon"><img src="../assets/imgs/profil/.png" style="width: 50px;height: 50px;"></i>
-                    <p>Komite Manajemen Resiko</p>
-                </a>
-            </div>   
-            <div class="item col col-4 ">
-                <a [navPush]="'AnPerusahaanPage'">
-                    <i class="icon"><img src="../assets/imgs/profil/anakPerusahaan1.png" style="width: 50px;height: 50px;"></i>
-                    <p>Anak Perusahaan & Usaha Patungan</p>
-                </a>
-            </div>  
-        </div>  
-
-        <div class="row item-text-wrap text-center">
-            <div class="item col col-4">
-                <a [navPush]="'PengPrestasiPage'">
-                    <i class="icon"><img src="../assets/imgs/profil/penghargaan.png" style="width: 50px;height: 50px;"></i>
-                    <p class="text-menuProfil">Penghargaan & Prestasi</p>
-                </a>
-            </div>  
-            <div class="item col col-4">
-                <a [navPush]="'MarsPetroPage'">
-                    <i class="icon"><img src="../assets/imgs/profil/lirik.png" style="width: 50px;height: 50px;"></i>
-                    <p>Mars Petrokimia Gresik</p>
-                </a>
-            </div>  
-            <div class="item col col-4 ">
-                <a [navPush]="'VideoProfilPage'">
-                    <i class="icon"><img src="../assets/imgs/profil/video1.png" style="width: 50px;height: 50px;"></i>
-                    <p>Video Profil Perusahaan</p>
-                </a>
-            </div>  
-        </div>
+    <ion-card style="width: 100%; height: 100px;overflow : hidden !important;" class="category-concept-card cardHome" no-lines no-padding *ngFor="let item of items">
+    <ion-card-header>
+      <h2 class="category-title" class="textDesc text-wrap">{{item.ListName}}</h2>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-col no-padding>
+            <button ion-button color="secondary" round outline item-end icon-left (click)="openPage(item)">
+                <ion-icon name="ios-browsers"></ion-icon>
+                Open Page
+            </button>
+        </ion-col>
+    </ion-card-content>
+    </ion-card> 
 </ion-content>
+    <!-- <ion-list *ngFor="let item of items" >
+    <ion-card-content>
+      <h2>
+        {{item.ListName}}
+      </h2>
+    </ion-card-content>
+    <ion-row no-padding>
+      <ion-col>
+        <button (click)="openPage(item)" ion-button clear small icon-left color="dark">
+            <ion-icon name='calculator'></ion-icon>
+            calculate
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-list> -->
+        

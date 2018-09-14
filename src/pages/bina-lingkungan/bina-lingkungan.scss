@@ -1,0 +1,76 @@
+page-bina-lingkungan {
+    	.listBina{
+    		font-size: 13px;
+    		text-align: justify;
+    		padding: 5px;
+    	}
+    	.listBinaAccordion{
+            line-height: 17px;
+    		font-size: 13px;
+    		text-align: justify;
+    		background-color: #f1f8e9;
+    		margin-top: 15px;
+    		margin-bottom: 15px;
+    	}
+    	.cardAccordion{
+            line-height: 17px;
+    		font-size: 13px;
+    		text-align: justify;
+    		padding: 8px;
+            border-radius: 10px;
+            width: 300px;
+            margin-left: 0px;
+    	}
+        .isiList{
+            line-height: 17px;
+            text-align: justify;
+            padding-bottom: 5px;
+            background-color: #d6edb9;
+            padding-top: 5px;
+            line-height: inherit;
+        }
+    	.accordion {
+
+        line-height: 17px;
+        background-color: #f1f8e9;
+        color: #000;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        text-align: left;
+        border-right: none;
+        outline: none;
+        transition: 0.4s;
+        margin-right: 5px;
+
+    }
+    .accordion:after {
+        content: '\02795'; /* Unicode character for "plus" sign (+) */
+        font-size: 13px;
+        color: #000;
+        float: right;
+        margin-left: 5px;
+    }
+
+    .active:after {
+        content: "\2796"; /* Unicode character for "minus" sign (-) */
+        color: #fff;
+    }
+
+    /* Add a background color to the button if it is clicked on (add the
+    .active class with JS), and when you move the mouse over it (hover) */
+    .active, .accordion:hover {
+        background-color: #43a047;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    /* Style the accordion panel. Note: hidden by default */
+    .panel {
+        padding: 0 15px;
+        /*background-color: #f1f8e9;hijau muda*/
+        background-color: #d6edb9;
+        display: none;
+        overflow: hidden;
+    }
+}

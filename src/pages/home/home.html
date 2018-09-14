@@ -1,133 +1,97 @@
 <ion-header class="headerHome {{global.state['theme']}}">
   <ion-navbar no-border-bottom color="header">
-		
-
-		<!-- <ion-segment [(ngModel)]="segment" (ionChange)="updateSchedule()"  color="textHeader" >
-	      <ion-segment-button value="semua">
-	        Semua
-	      </ion-segment-button>
-	      <ion-segment-button value="populer">
-	        Populer
-	      </ion-segment-button>
-	      <ion-segment-button value="terbaru">
-	        Terbaru
-	      </ion-segment-button>
-	    </ion-segment> -->
       <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
       </button>
-      <ion-title>PetroNews</ion-title>
-	    <ion-buttons end>
-	      <button ion-button icon-only (click)="presentFilter()">
-	        <ion-icon ios="ios-more" md="md-more"></ion-icon>
-	      </button>
-	    </ion-buttons>
+      <ion-title>Petro News</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="presentFilter()">
+          <ion-icon ios="ios-more" md="md-more"></ion-icon>
+        </button>
+      </ion-buttons>
   </ion-navbar>
 
   <ion-toolbar no-border-top color="header">
-    <ion-searchbar color="primary"
+    <!-- <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()"></ion-searchbar> -->
+     <ion-searchbar color="primary"
                    [(ngModel)]="queryText"
-                   (ionInput)="updateBerita()"
+                   (ionInput)="updateSchedule()"
                    placeholder="Search">
     </ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 
-<ion-content padding="true" class="has-header {{global.state['theme']}}" >
- <h3>Setting theme</h3>
+<ion-content class="has-header {{global.state['theme']}}" >
   <button class="pop-in" ion-button (click)="changeTheme('')">Default</button>
   <button class="pop-in" ion-button color="dark" (click)="changeTheme('theme-dark')">Dark</button>
 
+  <!--============================= REFRESH PAGE ========================================================= -->
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-	<!--============================= IMAGES SLIDE ========================================================= -->
-   <!--  <ion-slides autoplay="5000" loop="true" speed="3000" style="width:100%;height:200px;" class="slideImage">
-	    <ion-slide *ngFor="let slide of slideData">
-	      <img src="{{slide.image}}" />
-	    </ion-slide>
-	</ion-slides> -->
-	<!--============================= LIST CARDS BERITA ========================================================= -->
+  <!--==================================================================================================== -->
 
-    <!-- <ion-card *ngFor="let berita of beritaku | async" (click)="openDetails(berita)"class="cardHome" style="width:100%;height:100px;">
+  <!--============================= IMAGES SLIDE ========================================================= -->
+    <ion-slides autoplay="5000" loop="true" speed="3000" style="width:100%;height:200px;" class="slideImage">
+      <ion-slide *ngFor="let slide of slideData">
+        <img style="width: 348px" src="{{slide.image}}" />
+      </ion-slide>
+  </ion-slides>
+  <!--=================================================================================================== -->
 
-      <ion-item >
-        <ion-avatar item-left>
-          <img class="avatarCard" src="../assets/imgs/proper 17_con.jpg" />
+  <!--============================= MENU CARD =========================================================== -->
+  <ion-card class="cardMenu{{global.state['theme']}}">
+    <a class="linkBerita" [navPush]="'BeritaReportasePage'">
+      <button text-wrap class="buttonMenu">
+        <ion-icon class="iconMenu" name="globe"></ion-icon><br>
+        REPORTASE
+      </button>
+    </a>
+    <a class="linkBerita"  [navPush]="'PengumumanPage'">
+      <button text-wrap class="buttonMenu">
+        <ion-icon class="iconMenu" name="globe"></ion-icon><br>
+        PENGUMUMAN
+      </button>
+    </a>
+    <a class="linkBerita" [navPush]="'SiaranPersPage'">
+      <button text-wrap class="buttonMenu">
+        <ion-icon class="iconMenu" name="globe"></ion-icon><br>
+        SIARAN PERS
+      </button>
+    </a>
+  </ion-card>
+
+  <ion-card class="cardMenu{{global.state['theme']}}">
+    <a class="linkBerita" [navPush]="'ArtikelPage'">
+      <button text-wrap class="buttonMenu">
+        <ion-icon class="iconMenu" name="globe"></ion-icon><br>
+        ARTIKEL
+      </button>
+    </a>
+    <a class="linkBerita" [navPush]="'KegiatanTahunanPage'">
+      <button text-wrap class="buttonMenu">
+        <ion-icon class="iconMenu" name="globe"></ion-icon><br>
+        TAHUNAN
+      </button>
+    </a>
+    <button text-wrap class="buttonMenu">
+      <ion-icon class="iconMenu" name="settings"></ion-icon><br>
+      PENGATURAN
+    </button>
+  </ion-card>
+  <!--=================================================================================================== -->
+
+  <!--============================= LIST CARDS BERITA =================================================== -->
+    <ion-card *ngFor="let berita of beritaku | async" (click)="openDetails(berita)"class="cardHome">
+      <ion-item text-wrap>
+        <ion-avatar item-left clas="avatarBerita">
+          <img class="avatarCard" src="{{berita.ImageName}}" />
         </ion-avatar>
 
         <p class="textDesc text-wrap">{{berita.NewsTitle}}</p>
-      </ion-item>
- 
-     
- 
-    </ion-card> -->
-	<!-- 
-    <ion-card *ngFor="let card of cards2"  class="cardHome">
-
-      <ion-item >
-      	<ion-avatar item-left>
-          <img class="avatarCard" src="../assets/imgs/sni17_con.jpg" />
-        </ion-avatar>
-
-        <p class="textDesc text-wrap">PG Kucurkan Bantuan Untuk Korban Banjir Di Lamongan</p>
-
-        <ion-row>
-        <ion-col right text-right>
-          <ion-note class="cardLink">
-            Selengkapnya ...
-          </ion-note>
-        </ion-col>
-      </ion-row>
-
-      </ion-item>
- 
-    </ion-card> -->
-    <!-- <ion-list>
-      <ion-item *ngFor="let n of news">
-        <ion-avatar item-left>
-          <img src="{{n.gambar}}">
-        </ion-avatar>
-        <h2>{{n.NewsTitle}}</h2>
-        <p>{{n.NewsHTML}}</p>
-        <ion-icon name="arrow-forward" item-right></ion-icon>
-      </ion-item>
-    </ion-list> -->
-
-    <div class="popup-menu">
-    <div class="popup-menu-overlay" [ngClass]="{'in': openMenu}" (click)="togglePopupMenu()"></div>
-    <div class="popup-menu-toggle" (click)="togglePopupMenu()" [ngClass]="{'out': openMenu}"></div>
-    <div class="popup-menu-panel" [ngClass]="{'in': openMenu}">
-      <div class="popup-menu-item" (click)="goToPengumuman()">
-        <ion-icon name="paper"></ion-icon>
-        <ion-badge>25</ion-badge>
-        <span>PENGUMUMAN</span>
-      </div>
-      <div class="popup-menu-item" (click)="goToSiaran()">
-        <ion-icon name="trophy"></ion-icon>
-        <span>SIARAN PERS</span>
-      </div>
-      <div class="popup-menu-item" (click)="goToArtikel()">
-        <ion-icon name="podium"></ion-icon>
-        <ion-badge>10</ion-badge>
-        <span>ARTIKEL</span>
-      </div>
-      <div class="popup-menu-item" (click)="goToHelp()">
-        <ion-icon name="bookmarks"></ion-icon>
-        <span>TERSIMPAN</span>
-      </div>
-      <div class="popup-menu-item" (click)="goToReportase()">
-        <ion-icon name="paper-plane"></ion-icon>
-        <!-- <ion-badge>5</ion-badge> -->
-        <span>REPORTASE</span>
-      </div>
-      <div class="popup-menu-item" (click)="goToLaporan()">
-        <ion-icon name="document"></ion-icon>
-        <!-- <ion-badge>25</ion-badge> -->
-        <span>LAPORAN</span>
-      </div>
-    </div>
-  </div>
-    
+      </ion-item> 
+      <ion-label class="itemSelengkapnya">Selengkapnya...</ion-label>
+    </ion-card>
+  <!--=================================================================================================== -->
 </ion-content>

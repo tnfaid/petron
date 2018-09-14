@@ -14,7 +14,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'berita-detail.html',
 })
 export class BeritaDetailPage {
+  //------------------------- TAMPILAN GAMBAR HOME --------------------------------------//
 
+ // Tampilan detail
   berita: any;
  
   constructor(public navCtrl: NavController, public navParams: NavParams) {

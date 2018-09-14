@@ -1,6 +1,7 @@
 
 // Angular
 import { Component, ViewChild } from '@angular/core';
+import { AppState } from './app.global';
 
 // RxJS
 import { ReplaySubject } from "rxjs/ReplaySubject";
@@ -44,6 +45,7 @@ export class MyApp {
   constructor(private platform: Platform,
         private statusBar: StatusBar,
         private splashScreen: SplashScreen,
+        public global: AppState,
         private alertCtrl: AlertController,
         private menuCtrl: MenuController) {
     this.initializeApp();
@@ -51,6 +53,7 @@ export class MyApp {
 
   initializeApp() {
     this.platform.ready().then(() => {
+      this.global.set('theme', '');
       this.statusBar.styleLightContent();
       this.splashScreen.hide();
 
@@ -163,20 +166,20 @@ export class MyApp {
       suboptions: [
         {
           displayText: 'Bina Lingkungan',
-          component: 'PupukPage'
+          component: 'BinaLingkunganPage'
         },
         {
           displayText: 'Lolapil',
-          component: 'NonPage'
+          component: 'LolapilPage'
         },
         {
           displayText: 'Kemitraan',
           // badge: this.unreadCountObservable,
-          component: 'BrosurPage'
+          component: 'KemitraanPage'
         },
         {
           displayText: 'Warta KBL',
-          component: 'DosisPage'
+          component: 'WartaKblPage'
         }
       ]
     });
@@ -192,64 +195,7 @@ export class MyApp {
       badge: ArrayObservable.of('NEW'),
       component: 'BantuanPage'
     });
-    this.options.push({
-      iconName: 'md-analytics',
-      displayText: 'Tata Kelola',
-      badge: ArrayObservable.of('NEW'),
-      component: 'TataKelolaPage'
-    });
 
-    // this.options.push({
-    //   displayText: 'Same component',
-    //   suboptions: [
-    //     {
-    //       iconName: 'mail',
-    //       displayText: 'Inbox',
-    //       component: 'EmailsPage',
-    //       custom: {
-    //         param: { showDeleted: false }
-    //       }
-    //     },
-    //     {
-    //       iconName: 'trash',
-    //       displayText: 'Bin',
-    //       component: 'EmailsPage',
-    //       custom: {
-    //         param: { showDeleted: true }
-    //       }
-    //     }
-    //   ]
-    // });
-
-    // // Load special options
-    // // -----------------------------------------------
-    // this.options.push({
-    //   displayText: 'Special options',
-    //   suboptions: [
-    //     {
-    //       iconName: 'log-in',
-    //       displayText: 'Login',
-    //       custom: {
-    //         isLogin: true
-    //       }
-    //     },
-    //     {
-    //       iconName: 'log-out',
-    //       displayText: 'Logout',
-    //       custom: {
-    //         isLogout: true
-    //       }
-    //     },
-    //     {
-    //       iconName: 'globe',
-    //       displayText: 'Open Google',
-    //       custom: {
-    //         isExternalLink: true,
-    //         externalUrl: 'http://www.google.com'
-    //       }
-    //     }
-    //   ]
-    // });
 
   }
 
@@ -284,5 +230,8 @@ export class MyApp {
     });
     alert.present();
   }
+
+
+
 
 }

@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-
-/**
- * Generated class for the ProfilPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { AppState } from '../../app/app.global';
 
 @IonicPage()
 @Component({
@@ -14,10 +8,65 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
   templateUrl: 'profil.html',
 })
 export class ProfilPage {
+  items: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
 
+  //------------------------- TAMPILAN GAMBAR HOME --------------------------------------//
+  cards1: any;
+  cards2: any;
+  cards3: any;
+  slideData = [{ image: "../assets/imgs/logopetro.jpg" }, { image: "../assets/imgs/block_kanan.jpg" }, { image: "../assets/imgs/block_kiri.jpg" }]
+  slideLength: boolean = false;
+  //-------------------------------------------------------------------------------------//
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController,  public global: AppState) 
+  {
+    this.initializeItems();
   }
+
+  changeTheme(theme) {
+    this.global.set('theme', theme);
+    console.log(theme);
+  }
+
+  initializeItems() {
+    this.items = [
+      {ListPage: 'MaknaLogoPage', ListName: 'Makna Logo' },
+      {ListPage: 'SejPerusahaanPage', ListName: 'Sejarah Perusahaan' },
+      {ListPage: 'VisiMisiPage', ListName: 'Visi Misi & Tata Nilai' },
+      {ListPage: 'FasInfrasPage', ListName: 'Fasilitas Infrastruktur' },
+      {ListPage: 'ManajemenPage', ListName: 'Manajemen' },
+      {ListPage: 'Lk3Page', ListName: 'Lingkungan & K3' },
+      {ListPage: 'KomitAuditPage', ListName: 'Komite Audit' },
+      {ListPage: 'ProfPenunjangPage', ListName: 'Profesi Penunjang' },
+      {ListPage: 'KapProdukPage', ListName: 'Kapasitas Produksi' },
+      {ListPage: 'SdmPage', ListName: 'Sumber Daya Manusia' },
+      {ListPage: 'KomitManResikoPage', ListName: 'Komite Manajemen Resiko' },
+      {ListPage: 'AnPerusahaanPage', ListName: 'Anak Perusahaan & Usaha Patungan' },
+      {ListPage: 'PengPrestasiPage', ListName: 'Penghargaan & Prestasi' },
+      {ListPage: 'MarsPetroPage', ListName: 'Mars Petrokimia Gresik' },
+      {ListPage: 'VideoProfilPage', ListName:'Video Profil Perusahaan' }
+    ];
+  }
+
+  
+
+  getItems(ev: any) {
+
+    this.initializeItems();
+    let val = ev.target.value;
+
+      if (val && val.trim() != '') {
+            this.items = this.items.filter((item) => {
+                return (item.ListName.toLowerCase().indexOf(val.toLowerCase()) > -1);
+            })
+        }
+    }
+
+    public openPage(item: any): void {
+        this.navCtrl.push(item.ListPage);
+    }
+  
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilPage');

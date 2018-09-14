@@ -1,191 +1,107 @@
-page-home {
-
-  ion-badge{
-    right: calc(50% - 30px) !important;
-    top: -5px;
-    position: absolute;
-    right: 4%;
-    padding: 1px 6px;
-    height: auto;
-    font-size: 12px;
-    line-height: 16px;
+page-home{
+  .headerHome{
+    background-color: #1b5e20;
   }
-
-  .popup-menu ion-icon {
-    text-align: center;
-    color: white;
-    font-size: 2.5em;
-  }
-  .popup-menu-overlay {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    z-index: 100;
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transition: all 0.15s ease-in-out;
-    transition: all 0.15s ease-in-out;
-    background-image: -webkit-linear-gradient(rgba(68, 68, 68, 0.5) 0%, rgba(68, 68, 68, 0.25) 100%);
-    background-image: linear-gradient(rgba(68, 68, 68, 0.5) 0%, rgba(68, 68, 68, 0.25) 100%);
-  }
-  .popup-menu-overlay.in {
-    opacity: 1;
-    visibility: visible;
-  }
-  .popup-menu-toggle {
-    position: fixed;
-    width: 40px;
-    height: 40px;
-    bottom: 10px;
-    left: 50%;
-    margin-left: -20px;
-    background-color: rgb(15,157,88);
-    border-radius: 50%;
-    z-index: 101;
-    -webkit-transition: all 0.25s ease-in-out;
-    transition: all 0.25s ease-in-out;
-  }
-  .popup-menu-toggle:before {
-    position: absolute;
-    content: '\f10a';
-    font-family: "Ionicons";
-    width: 40px;
-    height: 40px;
-    top: 0px;
-    left: 0px;
-    line-height: 40px;
-    text-align: center;
-    font-size: 28px;
-    color: white;
-    opacity: 1;
-    -webkit-transition: all 0.25s ease-in-out;
-    transition: all 0.25s ease-in-out;
-    -webkit-transform-origin: 100% 100%;
-    transform-origin: 100% 100%;
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-  .popup-menu-toggle.out {
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transform: scale(0);
-    transform: scale(0);
-    -webkit-transition: all 0.15s ease-in-out;
-    transition: all 0.15s ease-in-out;
-  }
-  .popup-menu-toggle.out:before {
-    -webkit-transition: all 0.15s ease-in-out;
-    transition: all 0.15s ease-in-out;
-    -webkit-transform: scale(0);
-    transform: scale(0);
-  }
-  .popup-menu-panel {
-    position: fixed;
-    width: 300px;
-    height: 180px;
-    border-radius: 5%;
-    bottom: 20px;
-    left: 50%;
-    margin-left: -150px;
-    padding: 0px 5px;
-    background-color: rgb(15,157,88);
-    z-index: 102;
-    -webkit-transition: all 0.25s ease-in-out;
-    transition: all 0.25s ease-in-out;
-    -webkit-transition-delay: 0.15s;
-    transition-delay: 0.15s;
-    -webkit-transform-origin: 50% 100%;
-    transform-origin: 50% 100%;
-    -webkit-transform: scale(0);
-    transform: scale(0);
-    display: -webkit-box;
-    display: -moz-box;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    -moz-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-  }
-  .popup-menu-panel .popup-menu-item {
-    margin: auto;
-    -webkit-box-flex: 1 0 30%;
-    -webkit-flex: 1 0 30%;
-    -moz-box-flex: 1 0 30%;
-    -moz-flex: 1 0 30%;
-    -ms-flex: 1 0 30%;
-    flex: 1 0 30%;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: vertical;
-    -webkit-flex-direction: column;
-    -moz-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-transform: scale(0);
-    transform: scale(0);
-    opacity: 0;
-    -webkit-transition: all 0.25s ease-in-out;
-    transition: all 0.25s ease-in-out;
-  }
-  .popup-menu-panel .popup-menu-item i {
-    margin: auto 0px 5px 0px;
-    padding: 0px;
-    font-size: 30px;
-    line-height: 30px;
-    text-align: center;
-    color: white;
-  }
-  .popup-menu-panel .popup-menu-item span {
-    padding: 0px;
-    margin: 0px 0px auto 0px;
-    color: white;
-    text-align: center;
-    font-size: 11px;
-    text-transform: uppercase;
-    font-weight: bold;
-    line-height: 11px;
-  }
-  .popup-menu-panel .popup-menu-item:active i {
-    color: rgb(221,65,53);
-    -webkit-transition: all 0.15s;
-    transition: all 0.15s;
-  }
-  .popup-menu-panel .popup-menu-item:active span {
-    color: rgb(221,65,53);
-    -webkit-transition: all 0.15s;
-    transition: all 0.15s;
-  }
-  .popup-menu-panel.in {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-transition-delay: 0s;
-    transition-delay: 0s;
-  }
-  .popup-menu-panel.in .popup-menu-item {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    opacity: 1;
-    -webkit-transition-delay: 0.15s;
-    transition-delay: 0.15s;
-  }
-}
-
-.ios, .md{
-  page-home{
-    .avatarCard{
-      border-radius: 0px;
-      height: 80px;
-      width: 80px;
+  //============================== SEARCHBAR ====================================//
+    .searchbar-md .searchbar-input {
+      padding: 6px 55px;
+      border-radius: 2px;
+        background-position: left 8px center;
+      height: auto;
+      font-size: 1.6rem;
+      font-weight: 400;
+      line-height: 3rem;
+      color: #1b5e20;
+      background-color: #fff;
+      -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+      box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 1px 5px 0px rgba(0,0,0,0.12);
     }
+    .searchbar-md .searchbar-search-icon {
+      left: 16px;
+      top: 11px;
+      background-image: url("data:image/svg+xml;charset=utf-8,<svg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'><path%20fill='%235b5b5b'%20d='M337.509,305.372h-17.501l-6.571-5.486c20.791-25.232,33.922-57.054,33.922-93.257C347.358,127.632,283.896,64,205.135,64C127.452,64,64,127.632,64,206.629s63.452,142.628,142.225,142.628c35.011,0,67.831-13.167,92.991-34.008l6.561,5.487v17.551L415.18,448L448,415.086L337.509,305.372z%20M206.225,305.372c-54.702,0-98.463-43.887-98.463-98.743c0-54.858,43.761-98.742,98.463-98.742c54.7,0,98.462,43.884,98.462,98.742C304.687,261.485,260.925,305.372,206.225,305.372z'/></svg>");
+      width: 21px;
+      height: 21px;
+      color: #fff;
+    }
+  //==============================================================================//
+  ion-content{
+    background-color: #fff;
   }
+  .avatarCard{
+    border-radius: 10px;
+    height: 80px;
+    width: 80px;
+    }
+    ion-title{
+      text-align: center;
+    }
+    .cardMenu{
+      padding-left: 4px;
+      padding-bottom: 4px;
+      width: 100%;
+
+    }
+  .buttonMenu{
+      width: 115px;
+      height: 120px;
+      background-color: #1b5e20;
+      color: #fff;
+  }
+  .iconMenu{
+    padding-bottom: 10px;
+    font-size: 3.2rem;
+    padding-right: 5px;
+  }
+  a{
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      font-family: "Roboto","Helvetica Neue",sans-serif;
+  }
+  .toolbar-md-header .bar-button-clear-md, .toolbar-md-header .bar-button-default-md, .toolbar-md-header .bar-button-outline-md, .toolbar-md-header .toolbar-title-md {
+    color: #fff;
+  }
+  .itemSelengkapnya{
+    text-align: right;
+    font-size: 1.4rem;
+    border-width: 2px;
+      border-top-style: double;
+      border-color: #fff;
+      color: #1b5e20;
+  }
+  .item-md ion-avatar ion-img, .item-md ion-avatar img {
+      border-radius: 10%;
+      overflow: hidden;
+      width: 80px;
+      height: 80px;
+      margin-top: 20px; 
+  }
+  .item-md {
+      padding-left: 16px;
+      padding-right: 0px;
+      position: relative;
+      font-size: 1.4rem;
+      font-weight: normal;
+      text-transform: none;
+      background-color: #fff;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      -webkit-transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+      transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .card-md {
+      margin: 5px;
+      border-radius: 2px;
+      width: 97%;
+      font-size: 1.4rem;
+      background: #fff;
+      -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+      box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 1px 5px 0px rgba(0,0,0,0.12);
+      cursor: pointer;
+  }
+
+
+
+
 }

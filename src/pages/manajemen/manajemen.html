@@ -17,16 +17,15 @@
   <ion-card-header>
     Manajemen dibagi menjadi dua:
   </ion-card-header>
-
-  <ion-list>
-    <button ion-item [navPush]="'KomisPage'">
-      <ion-icon name="cart" item-start></ion-icon>
-      Komisaris
+  <ion-card-content>
+  <ion-list class="accordion-list">
+    <button ion-item [navPush]="'KomisPage'">Komisaris
+      <ion-icon name="ios-arrow-dropright" item-right></ion-icon>
     </button>
-    <button ion-item [navPush]="'DirutPage'">
-      <ion-icon name="cart" item-start></ion-icon>
-      Direksi
+    <button ion-item [navPush]="'DirutPage'">Direksi
+      <ion-icon name="ios-arrow-dropright" item-right></ion-icon>
     </button>
    </ion-list>
+ </ion-card-content>
 </ion-card>
 </ion-content>

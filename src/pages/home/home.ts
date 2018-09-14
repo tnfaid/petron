@@ -17,16 +17,19 @@ import { AppState } from '../../app/app.global';
   templateUrl: 'home.html',
 })
 export class HomePage {
+  // searchTerm : any="";
+
+ 
+
   @ViewChild('beritaList', { read: List }) beritaList: List;
   openMenu = false;
   //------------------------- TAMPILAN GAMBAR HOME --------------------------------------//
-  cards1: any;
-  cards2: any;
-  slideData = [{ image: "../assets/imgs/sni17_con.jpg" }, { image: "../assets/imgs/proper 17_con.jpg" }]
+  slideData = [{ image: "www.petrokimia-gresik.com/Resources/Images/Slideshow/[0].jpg" }, { image: "../assets/imgs/proper 17_con.jpg" }]
   slideLength: boolean = false;
-
   //------------------------- TAMPILAN BERITA HOME --------------------------------------//
   beritaku: Observable<any>;
+  queryText : '';
+
   constructor(public navCtrl: NavController, public apiProvider: ApiProvider,
    public toastCtrl : ToastController, public global: AppState) {
     this.beritaku = this.apiProvider.getBerita();
@@ -39,12 +42,20 @@ export class HomePage {
 
   IonViewDidLoad(){
      this.updateBerita();
+     this.updateSchedule();
+  }
+
+  updateSchedule(){
+    this.beritaList && this.beritaList.closeSlidingItems();
+
+    this.apiProvider.getBerita().subscribe((data :any) => {
+      this.beritaku = data.beritaku;
+    });
   }
 
   updateBerita(){
     // Close any open sliding items when the berita updates
     this.beritaList && this.beritaList.closeSlidingItems();
-
     this.apiProvider.getBerita();
   }
 
@@ -102,6 +113,4 @@ export class HomePage {
     this.navCtrl.push('LaporanPage');
   }
 
-
 }
-

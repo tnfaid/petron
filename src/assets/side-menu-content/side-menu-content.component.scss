@@ -3,8 +3,9 @@ side-menu-content {
     // ------------------------------------ //
     // Global variables                     //
     // ------------------------------------ //
-    $item-color-bg: #00b052;
-    $header-color-bg: #00b052;
+    $item-color-bg: #fff;
+    $header-color-bg: #fff;
+    // $options-color-bg: red;
     $animation-duration: 0.3s;
 
     // ------------------------------------ //
@@ -24,6 +25,7 @@ side-menu-content {
         padding-left: 16px;
         padding-right: 16px;
         min-height: 50px;
+        font-size: 13px;
 
         &.item.item-block {
             border-bottom: 1px solid $item-color-bg;
@@ -64,6 +66,7 @@ side-menu-content {
         }
 
         div.options {
+            // background-color: $option-color-bg;
             will-change: height;
             transition: height $animation-duration ease;
             overflow-y: hidden;

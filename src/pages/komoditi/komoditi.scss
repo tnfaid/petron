@@ -1,3 +1,14 @@
-page-komoditi {
+ul {
+      list-style: none;
+      margin: 0 auto;
+      padding: 0;
+      text-align: center;
+    }
+    li {
+      display: inline-block;
+      margin: 0 20px;
+    }
 
-}
+    .komoditi {
+    	height: 300px;
+    }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AppState } from '../../app/app.global';
 
 /**
  * Generated class for the PemasaranPage page.
@@ -15,7 +16,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PemasaranPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public global: AppState) {
 
   }
 
@@ -40,6 +41,11 @@ for (i = 0; i < acc.length; i++) {
         }
     });
 }
+  }
+
+ changeTheme(theme) {
+    this.global.set('theme', theme);
+    console.log(theme);
   }
 
 }

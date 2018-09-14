@@ -1,28 +1,84 @@
-a{
+.ios, .md{
+  page-profil{
+    .avatarCard{
+      border-radius: 0px;
+      height: 80px;
+      width: 80px;
+    }
+    a{
     text-decoration: none;
     color: #000;
     font-weight: bold;
     font-family: fantasy;
+    }
+    .icon-menuProfil{
+        font-size: 40px;
+        color: #00b052;
+    }
+    .col-4{
+        margin-top: 6px;
+        margin-right: 10px;
+        margin-bottom: 22px;
+        border-bottom-style: hidden;
+        border-top-style: hidden;
+        border-right-style: hidden;
+        border-left-style: hidden;
+    }
+    .item p {
+        color: #000;
+        font-size: 14px;
+        margin-top: 1px;
+        text-align: center;
+    }
+    .icon{
+        margin-left: 10px;
+    }   
+    h2.textDesc{
+          color: #fff;
+          white-space: normal;
+    }
+    .cardHome{
+          border-top-color: #000000;
+          border-top-style: outset;
+          border-width: 5px;
+          border-color: #000000;
+    }
+    .category-concept-card
+    {
+        background-color: $theme-color-1;
+        border-radius: 0;
+        box-shadow: none;
+        margin-bottom: 10px;
+        width: 100%;
+        margin: 5px;
+        position: relative;
+        
+
+        .category-title
+        {
+            color: #FFF;
+            font-weight: 600;
+            font-size: 2.2rem;
+            margin: 0px;
+        }
+
+        .category-description
+        {
+            color: #FFF;
+            margin-bottom: 20px;
+            opacity: 0.6;
+        }
+
+        .category-tag
+        {
+            border: 1px solid #FFF;
+            color: #FFF;
+            background: transparent;
+            font-weight: 300;
+            margin-right: 4px;
+            opacity: 0.6;
+        }
+    }
+  }
 }
-.icon-menuProfil{
-    font-size: 40px;
-    color: #00b052;
-}
-.col-4{
-    margin-top: 6px;
-    margin-right: 10px;
-    margin-bottom: 22px;
-    border-bottom-style: hidden;
-    border-top-style: hidden;
-    border-right-style: hidden;
-    border-left-style: hidden;
-}
-.item p {
-    color: #000;
-    font-size: 14px;
-    margin-top: 1px;
-    text-align: center;
-}
-.icon{
-	margin-left: 10px;
-}
+
